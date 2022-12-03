@@ -11,8 +11,8 @@ To Run Locally, Follow these steps
 ```npm install```
 
 3. Run the following command to start the server \
-```npm start``` \
-4.1234567891011121314151617
+```docker compose up --build``` \
+
 
 
 
