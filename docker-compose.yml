@@ -1,7 +1,5 @@
 version: "2"
 services:
-  mymongo:
-    image: "mongo"
   mynode:
     build: .
     ports:

@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "pm2 start app.js",
+    "start": "nodemon app.js",
     "test": "mocha --timeout 10000",
     "docs": "rm -rf public && apidoc -i ./ -o ./public/ -e node_modules -e public"
   },

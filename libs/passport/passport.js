@@ -9,7 +9,6 @@ opts.secretOrKey = 'TEST';
 
 
 const authenticateUser = async (jwt_payload, done) => {
-    console.log(jwt_payload, 'payload')
     try {
         const user = await getUserbyId(jwt_payload._id);
         if (user == null) {
