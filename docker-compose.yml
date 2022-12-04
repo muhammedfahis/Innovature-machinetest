@@ -1,6 +1,0 @@
-version: "2"
-services:
-  mynode:
-    build: .
-    ports:
-      - "5001:5001"

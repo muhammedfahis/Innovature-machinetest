@@ -11,7 +11,8 @@ const contactSchema = mongoose.Schema({
   },
   email: {
     type:String,
-    required:true
+    required:true,
+    unique:false
   },
   phone: {
     type:String,
@@ -22,8 +23,14 @@ const contactSchema = mongoose.Schema({
   state: String,
   country: String,
   zipCode: String,
-  createdOn: Date,
-  updatedOn: Date
+  createdOn: {
+    type:Date,
+    value:Date.now()
+  },
+  updatedOn: {
+    type:Date,
+    value:Date.now()
+  }
 });
 
 const ContactList = mongoose.model('ContactList', contactSchema);

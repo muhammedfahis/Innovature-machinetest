@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 const dotenv = require('dotenv');
-const taskRouter = require('./routes/contact');
+const contactRouter = require('./routes/contact');
 const userRouter = require('./routes/user');
 const passport = require('passport');
 const passportconfig = require('./libs/passport/passport');
@@ -23,7 +23,7 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 app.use(express.static(path.join(__dirname, 'public')));
-app.use('/contact', taskRouter);
+app.use('/contact', contactRouter);
 app.use('/user', userRouter);
 
 

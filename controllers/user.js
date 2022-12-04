@@ -7,7 +7,7 @@ const {
 } = require('../libs/jwt/jwtFunctions');
 
 
-const login = (req, res, next) => {
+const login = (req, res ) => {
     const {
         email,
         password

@@ -21,12 +21,15 @@ const register = (req, res) => {
             })
         } else {
             try {
+                req.body.createdOn = Date.now();
                 let newContact = new ContactList({
                     ...req.body
                 });
+                console.log(newContact)
                 const user = await newContact.save();
                 res.status(200).json({
                     status: 'success',
+                    _id: newContact._id,
                     message: 'Successfully registered',
                 });
             } catch (error) {
@@ -120,6 +123,7 @@ const updateContact = (req, res) => {
                 });
                const contact = await ContactList.findById(req.body.id);
                if (contact) {
+                  req.body.updatedOn = Date.now()
                    await ContactList.findOneAndUpdate({_id:req.body.id},{...req.body},{upsert:true});
                    res.status(200).json({
                     status: 'success',
